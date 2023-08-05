@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
   images: {
     remotePatterns: [
       {
@@ -9,7 +8,16 @@ const nextConfig = {
         port: "",
         pathname: "**",
       },
+      {
+        protocol: "http",
+        hostname: "res.cloudinary.com",
+        port: "",
+        pathname: "**",
+      },
     ],
+  },
+  experimental: {
+    serverComponentsExternalPackages: ["cloudinary", "graphql-request"],
   },
 };
 
